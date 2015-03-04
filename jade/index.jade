@@ -1,0 +1,62 @@
+//- index.jade
+mixin listItems(list)
+  ul
+    each item in list
+      if (typeof item === "object")
+        each key in Object.keys(item)
+          li= key
+            +listItems(item[key])
+      else
+        li= item
+
+doctype html
+html
+  head
+    style(type='text/css', media='screen')
+      include ../work/style.css
+  body
+    .polarity
+      header.polarity-header
+        h1= title
+      article
+        .row
+          .side
+            h2 Action Steps
+            +listItems(leftPole.actionSteps)
+          .middle
+            .top-block
+              span.polarity-term= gps
+            .row.top-row
+              .left-pro
+                +listItems(leftPole.positiveResults)
+              .right-pro
+                +listItems(rightPole.positiveResults)
+          .side
+            h2 Action Steps
+            +listItems(rightPole.actionSteps)
+        .polarity-box.left-item
+          span.polarity-term= leftPole.title
+        .polarity-box.and-item
+          span.and-term and
+        .polarity-box.right-item
+          span.polarity-term= rightPole.title
+        .row
+          .side
+            h2
+              span.early-warning
+              | Early Warnings
+            +listItems(leftPole.earlyWarnings)
+          .middle
+            .row.bottom-row
+              .left-con
+                +listItems(leftPole.negativeResults)
+              .right-con
+                +listItems(rightPole.negativeResults)
+            .bottom-block
+              span.polarity-term= deeperFear
+          .side
+            h2
+              span.early-warning
+              | Early Warnings
+            +listItems(rightPole.earlyWarnings)
+      footer.polarity-footer

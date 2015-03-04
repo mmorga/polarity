@@ -1,0 +1,167 @@
+@import "compass/css3";
+
+.polarity {
+  width: 100.3em;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.1em;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+article {
+  border: 2px solid gray;
+}
+
+ul {
+  width: auto;
+  margin: 0.5em;
+  font-size: 1em;
+  ul {
+    margin: 0.25em;
+  }
+}
+
+.side {
+  width: 24em;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0.5em;
+}
+
+.middle {
+  width: 50em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.row {
+  display: table-row;
+  vertical-align: top;
+  width: 100%
+}
+
+.top-block, .bottom-block {
+  width: 37.5em;
+  box-sizing: border-box;
+  border: 2px solid black;
+  height: 2em;
+  text-align: center;
+}
+
+.top-block {
+  border-bottom-width: 0;
+  background-color: rgb(181, 230, 133);
+  margin: 1em 6.25em 0 6.25em;
+}
+
+.bottom-block {
+  border-top-width: 0;
+  background-color: rgb(251, 192, 181);
+  margin: 0 6.25em 1em 6.25em;
+}
+
+.left-pro, .right-pro,
+.left-con, .right-con {
+  width: 50%;
+  vertical-align: top;
+  display: table-cell;
+}
+
+.right-pro, .left-pro {
+  padding-bottom: 3em;
+  padding-top: 0.5em;
+}
+
+.right-con, .left-con {
+  padding-top: 3em;
+  padding-bottom: 0.5em;
+}
+
+.top-row {
+  display: table;
+  background-image: inline-image("polarity-top.svg");
+  background-repeat: no-repeat;
+}
+
+.bottom-row {
+  display: table;
+  background-image: inline-image("polarity-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.polarity-box {
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid black;
+  top: -2.5em;
+  height: 5em;
+  width: 20em;
+  margin-bottom: -5em;
+}
+
+.left-item, .right-item {
+  margin-bottom: -5em;
+  @include border-radius(100px);
+}
+
+.left-item {
+  background-color: rgb(233, 203, 143);
+  left: 26.5em;
+}
+
+.right-item {
+  background-color: rgb(170, 168, 219);
+  left: 53.5em;
+  text-align: right;
+}
+
+.and-item {
+  margin-bottom: -2em;
+  background-color: rgb(181, 230, 133);
+  left: 48em;
+  top: -1em;
+  width: 4em;
+  height: 2em;
+  padding-top: 0;
+  text-align: center;
+}
+
+.polarity-term {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: 1em;
+  display: inline-block;
+}
+
+.top-block .polarity-term,
+.bottom-block .polarity-term {
+  margin-top: 0.1em;
+}
+
+.and-term {
+  margin: 0.1em;
+  font-weight: bold;
+  margin-top: 0.25em;
+  display: inline-block;
+}
+
+.early-warning {
+  background-image: inline-image("flag.svg");
+  width: 1.5em;
+  display: inline-block;
+  height: 1.5em;
+  background-repeat: no-repeat;
+}
