@@ -1,0 +1,41 @@
+---
+title: Production Coding Only vs Automated Testing
+gps: Quality Software
+deeperFear: "Buggy, Unreliable Software"
+leftPole:
+  title: Coding
+  actionSteps:
+    - Just write the code
+  positiveResults:
+    - Early development is faster
+    - Quickly sketch out application
+  negativeResults:
+    - Code developed is more difficult to extend
+    - Code has more bugs
+  earlyWarnings:
+    - Development slows over time
+    - Bug rate increases
+    - New features take longer to implement
+rightPole:
+  title: Automated Testing
+  actionSteps:
+    - Begin writing automated unit tests
+    - Run unit tests frequently
+    - Refactor when necessary
+  positiveResults:
+    - Code quality improves
+    - Bug rate decreases
+    - Faster to add new features with confidence
+  negativeResults:
+    - Poorly designed test code can be fragile
+      - Code refactoring can break many tests
+      - Tests break frequently
+      - Tests dependent on production data
+    - Test integration with external systems can be difficult
+    - Tests take time to write
+    - Obsession with test coverage metrics can result in reduced positive
+  earlyWarnings:
+    - Refactoring results in difficult to change tests
+    - Testing is consuming a larger percentage of development time
+    - Tests break frequently
+    - Tests are overly dependent on mocking

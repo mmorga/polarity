@@ -57,12 +57,8 @@ module.exports = function(grunt) {
         tasks: ['compass']
       },
       html: {
-        files: ['work/style.css', 'jade/index.jade'],
+        files: ['work/style.css', 'jade/index.jade', 'polarity.yml'],
         tasks: ['jade']
-      },
-      grunt: {
-        files: ['Gruntfile.js', 'package.json'],
-        tasks: ['default']
       }
     },
     clean: ["work", "dist"],
@@ -77,7 +73,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Default task(s).
-  // grunt.registerTask('default', ['svgmin', 'compass', 'jade']);
   grunt.registerTask('default', function(polarityFile) {
     grunt.task.run(['svgmin', 'compass', 'jade']);
     if (arguments.length === 1) {

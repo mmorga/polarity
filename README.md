@@ -1,5 +1,7 @@
 # Polarity: Builds Polarity Diagrams from a YAML file.
 
+![alt text](https://github.com/mmorga/polarity/raw/master/examples/polarity-coding-test.png "Example Polarity Diagram")
+
 ## Install Dependencies
 
 ```bash
