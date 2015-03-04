@@ -1,14 +1,4 @@
 //- index.jade
-mixin listItems(list)
-  ul
-    each item in list
-      if (typeof item === "object")
-        each key in Object.keys(item)
-          li= key
-            +listItems(item[key])
-      else
-        li= item
-
 doctype html
 html
   head
@@ -22,18 +12,18 @@ html
         .row
           .side
             h2 Action Steps
-            +listItems(leftPole.actionSteps)
+            != leftPole.actionSteps
           .middle
             .top-block
               span.polarity-term= gps
             .row.top-row
               .left-pro
-                +listItems(leftPole.positiveResults)
+                != leftPole.positiveResults
               .right-pro
-                +listItems(rightPole.positiveResults)
+                != rightPole.positiveResults
           .side
             h2 Action Steps
-            +listItems(rightPole.actionSteps)
+            != rightPole.actionSteps
         .polarity-box.left-item
           span.polarity-term= leftPole.title
         .polarity-box.and-item
@@ -45,18 +35,18 @@ html
             h2
               span.early-warning
               | Early Warnings
-            +listItems(leftPole.earlyWarnings)
+            != leftPole.earlyWarnings
           .middle
             .row.bottom-row
               .left-con
-                +listItems(leftPole.negativeResults)
+                != leftPole.negativeResults
               .right-con
-                +listItems(rightPole.negativeResults)
+                != rightPole.negativeResults
             .bottom-block
               span.polarity-term= deeperFear
           .side
             h2
               span.early-warning
               | Early Warnings
-            +listItems(rightPole.earlyWarnings)
+            != rightPole.earlyWarnings
       footer.polarity-footer
