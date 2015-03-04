@@ -69,3 +69,32 @@ To specify a different YAML file, (for example, `/ideas/conflict.yml`) you'd run
 ```bash
 grunt default:/ideas/conflict.yml
 ```
+
+## Why did I do this
+
+Ok, I see what you are thinking. You are thinking that your humble friend has finally crossed the line. Finally slipped free of the tenuous final strands of sanity and leapt headlong into the freeing abyss of madness. But no! They all said I was crazy! They all…
+
+Where was I?
+
+Oh – ok well I built a tool to build polarity diagrams as seen on http://polaritymanagement.com/
+
+Why in the “wide, wide world of sports” would I do this?
+
+Well a few reasons:
+
+1. The diagram looked like an interesting challenge from an HTML/CSS perspective (it was – and there’s probably a better way to do it – maybe flexbox).
+2. I wanted to see how the node grunt tool compared to Ruby’s rake since grunt is what a project at work uses.
+3. I wanted to see how well I could use SVG and CSS to set the backgrounds of HTML elements.
+4. I wanted to expand how I’d use SVG in data urls in embedded CSS.
+5. I wanted to see how the Jade (NodeJs Templating) works compared to HAML or other Ruby implementations.
+
+## Conclusions
+
+* Grunt is a decent tool – I think Rake is a cleaner tool for this sort of thing
+* SVG works well for backgrounds – the key is the top level SVG needs to have:
+    * width & height attributes set to 100%
+    * A viewBox attribute set to the size of the image
+    * A preserveAspectRatio attribute set to “none”
+* Compressing SVG into CSS data URLs works fine – Compass includes a helper that makes this super-easy
+* Jade is a reasonable templating solution
+* Grunt isn’t a very good solution overall for this because the solution (Grunt) requires two Ruby libraries (Compass and Sass) - it would reduce dependencies to use a pure Ruby solution.
